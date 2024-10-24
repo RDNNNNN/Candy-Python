@@ -11,7 +11,7 @@ def sum_of_smallest_values(arr):
     return sorted_arr[0] + sorted_arr[1]
 
 
-# 使用sorted()方法排序,sorted()預設會是由小到大排序
+# 使用 sorted() 方法排序, sorted() 預設會是由小到大排序
 # 使用索引值取得最小的兩個值並相加
 list1 = [19, 5, 42, 2, 77]
 list2 = [23, 15, 59, 4, 17]
