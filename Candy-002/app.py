@@ -21,5 +21,6 @@ def missing_char(chars):
 print(missing_char(chars1))  # 印出 e
 print(missing_char(chars2))  # 印出 P
 
+
 #  提示：
 #  可使用字串的 charCodeAt 方法...

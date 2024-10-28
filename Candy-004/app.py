@@ -16,6 +16,7 @@ def human_readable_timer(seconds):
 # 設定 sec 為秒, 60 秒進位分鐘, 所以取 60 餘數
 # 使用 f 字串設定兩位數並回傳
 
+
 print(human_readable_timer(0))  # 印出 00:00:00
 print(human_readable_timer(59))  # 印出 00:00:59
 print(human_readable_timer(60))  # 印出 00:01:00

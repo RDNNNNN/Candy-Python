@@ -14,7 +14,6 @@
 def sum_of_smallest_values(arr):
     sorted_arr = sorted(arr)
     return sorted_arr[0] + sorted_arr[1]
-
 # 使用 sorted() 方法排序, sorted() 預設會是由小到大排序
 # 使用索引值取得最小的兩個值並相加
 
@@ -40,7 +39,6 @@ def missing_char(chars):
     char_loop = set(ord(char) for char in chars)
     char_range = set(range(ord(chars[0]), ord(chars[-1]) + 1))
     return chr((char_range - char_loop).pop())
-
 # 在 set() 中寫一個迴圈並使用 ord() 將字串轉成數字
 # 使用 range() 設定迴圈範圍的第一個值跟最後一個值,可以抓出連續的值, + 1 是確保能包含最後一位
 # 利用 set() 能移除重複值的特性,將迴圈的內容跟 range() 的內容相減,就能找出缺少的數字
@@ -67,10 +65,10 @@ def move_zeros_to_end(arr):
     list_not_zero = [i for i in arr if str(i) != "0"]
     list_zero = [i for i in arr if str(i) == "0"]
     return list_not_zero + list_zero
+# 設定一個 list_not_zero 並使用推導式判斷不為 0 的值
+# 設定一個 list_zero 並使用推導式判斷為 0 的值
+# 利用串列相加後合併的特性並回傳串列
 
-    # 設定一個 list_not_zero 並使用推導式判斷不為 0 的值
-    # 設定一個 list_zero 並使用推導式判斷為 0 的值
-    # 利用串列相加後合併的特性並回傳串列
 
 result = move_zeros_to_end(list)
 print(result)
@@ -90,11 +88,11 @@ def human_readable_timer(seconds):
     sec = seconds % 60
 
     return f"{hour:02}:{min:02}:{sec:02}"
-
 # 設定 hour 為小時, 3600 秒進位小時, 所以除以 3600
 # 設定 min 為分鐘, 3600 秒進位小時所以取 3600 餘數, 60 秒進位分鐘所以除以 60
 # 設定 sec 為秒, 60 秒進位分鐘, 所以取 60 餘數
 # 使用 f 字串設定兩位數並回傳
+
 
 print(human_readable_timer(0))  # 印出 00:00:00
 print(human_readable_timer(59))  # 印出 00:00:59
