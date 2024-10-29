@@ -114,9 +114,9 @@ print(human_readable_timer(359999))  # 印出 99:59:59
 
 ```py
 def square_digits(num):
-num_list = list(str(num))
-numSquare = [str(int(num) ** 2) for num in num_list]
-return "".join(numSquare)
+    num_list = list(str(num))
+    numSquare = [str(int(num) ** 2) for num in num_list]
+    return "".join(numSquare)
 # 設定變數 num_list 使用 list 做切割, 由於數字沒辦法直接切割, 所以需要先轉成字串
 # 設定變數 numSquare 使用推導式將 num 先轉成數字平方和, 由於 join() 需要使用字串所以再把 num 轉成字串
 # 因為只有字串相加所以使用空字串, join() 會將轉成字串的數字做結合並回傳新的字串
@@ -136,8 +136,6 @@ print(square_digits(387)) # 印出 96449
 def find_different(numbers):
     set_num = (num for num in set(numbers) if numbers.count(num) == 1)
     return next(set_num)
-
-
 # 設定變數 set_num 使用推導式, 將串列轉成 set() 取出重複值
 # 因為只有一個不重複值, 使用 count() 判斷出現的值是否為 1
 # 使用 pop() 可以移除此元素並回傳
