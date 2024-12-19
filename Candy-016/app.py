@@ -10,7 +10,7 @@ def toCamelCase(str):
 
 
 # 以底線分割字串成列表
-# 將第一個部分保持小寫, 其他部分首字母大寫後合併
+# 將第一個部分保持小寫,其他部分首字母大寫後合併
 
 print(toCamelCase("book"))  # book
 print(toCamelCase("book_store"))  # bookStore
