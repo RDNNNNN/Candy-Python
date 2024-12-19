@@ -1,5 +1,5 @@
 # 編號：CANDY-022
-# 程式語言：JavaScript
+# 程式語言：Python
 # 題目：實作 Queue 資料結構
 
 
