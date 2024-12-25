@@ -6,14 +6,16 @@
 
 ### 例如：
 
-`[15, 28, 4, 2, 43] 印出 6`
-
-`[23, 71, 33, 82, 1] 印出 24`
+```py
+[15, 28, 4, 2, 43] 印出 6
+[23, 71, 33, 82, 1] 印出 24
+```
 
 ```py
 def sum_of_smallest_values(arr):
     sorted_arr = sorted(arr)
     return sorted_arr[0] + sorted_arr[1]
+
 # 使用 sorted() 方法排序, sorted() 預設會是由小到大排序
 # 使用索引值取得最小的兩個值並相加
 
@@ -39,6 +41,7 @@ def missing_char(chars):
     char_loop = set(ord(char) for char in chars)
     char_range = set(range(ord(chars[0]), ord(chars[-1]) + 1))
     return chr((char_range - char_loop).pop())
+
 # 在 set() 中寫一個迴圈並使用 ord() 將字串轉成數字
 # 使用 range() 設定迴圈範圍的第一個值跟最後一個值,可以抓出連續的值, + 1 是確保能包含最後一位
 # 利用 set() 能移除重複值的特性,將迴圈的內容跟 range() 的內容相減,就能找出缺少的數字
@@ -65,10 +68,10 @@ def move_zeros_to_end(arr):
     list_not_zero = [i for i in arr if str(i) != "0"]
     list_zero = [i for i in arr if str(i) == "0"]
     return list_not_zero + list_zero
+
 # 設定一個 list_not_zero 並使用推導式判斷不為 0 的值
 # 設定一個 list_zero 並使用推導式判斷為 0 的值
 # 利用串列相加後合併的特性並回傳串列
-
 
 result = move_zeros_to_end(list)
 print(result)
@@ -88,11 +91,11 @@ def human_readable_timer(seconds):
     sec = seconds % 60
 
     return f"{hour:02}:{min:02}:{sec:02}"
+
 # 設定 hour 為小時, 3600 秒進位小時, 所以除以 3600
 # 設定 min 為分鐘, 3600 秒進位小時所以取 3600 餘數, 60 秒進位分鐘所以除以 60
 # 設定 sec 為秒, 60 秒進位分鐘, 所以取 60 餘數
 # 使用 f 字串設定兩位數並回傳
-
 
 print(human_readable_timer(0))  # 印出 00:00:00
 print(human_readable_timer(59))  # 印出 00:00:59
@@ -117,6 +120,7 @@ def square_digits(num):
     num_list = list(str(num))
     numSquare = [str(int(num) ** 2) for num in num_list]
     return "".join(numSquare)
+
 # 設定變數 num_list 使用 list 做切割, 由於數字沒辦法直接切割, 所以需要先轉成字串
 # 設定變數 numSquare 使用推導式將 num 先轉成數字平方和, 由於 join() 需要使用字串所以再把 num 轉成字串
 # 因為只有字串相加所以使用空字串, join() 會將轉成字串的數字做結合並回傳新的字串
@@ -136,6 +140,7 @@ print(square_digits(387)) # 印出 96449
 def find_different(numbers):
     set_num = (num for num in set(numbers) if numbers.count(num) == 1)
     return next(set_num)
+
 # 設定變數 set_num 使用推導式, 將串列轉成 set() 取出重複值
 # 因為只有一個不重複值, 使用 count() 判斷出現的值是否為 1
 # 使用 pop() 可以移除此元素並回傳
@@ -157,7 +162,6 @@ def find_some_different(numbers):
     evens = [num for num in numbers if num % 2 != 0]
     return odds[0] if len(odds) == 1 else evens[0]
 
-
 # 設定變數 odds 並使用推導式判斷偶數
 # 設定變數 enevs 並使用推導式判斷奇數
 # 使用 pop() 抓出串列的值並判斷長度是 1 後回傳
@@ -170,13 +174,7 @@ print(find_some_different([160, 3, 1719, 19, 11, 13, -21]))  # 印出 160
 
 ### 程式語言：Python
 
-### 題目：
-
-```py
-傳入一字串，計算得分最高的字
-英文字母 a 得 1 分、b 得 2 分、c 得 3 分，以此類推。
-所有傳入的字都是小寫。
-```
+### 題目：傳入一字串，計算得分最高的字，英文字母 a 得 1 分、b 得 2 分、c 得 3 分，以此類推。所有傳入的字都是小寫。
 
 ```py
 def highest_score_word(input):
@@ -187,6 +185,7 @@ def highest_score_word(input):
     highest_word = max(words, key=word_score)
 
     return highest_word
+
 # 建立函數來計算每個字的得分
 # 將輸入字串分割成單詞
 # 使用 max()找出得分最高的字
@@ -209,6 +208,7 @@ print(highest_score_word("in time machine there are some bugs"))
 def remove_anchor(url):
     url_split = url.split("#")
     return url_split[0]
+
 # 設定變數url_split使用split()以'#'作為切割點
 # 使用索引值並回傳前半段
 
@@ -225,7 +225,9 @@ print(
 
 ### 題目：把數字以 10 進位展開式呈現，數字均為大於 0 的正整數
 
-`範例：9527 變成 "1000 x 9 + 100 x 5 + 10 x 2 + 7"`
+```py
+範例：9527 變成 "1000 x 9 + 100 x 5 + 10 x 2 + 7"
+```
 
 ```py
 def expanded_form(num):
@@ -240,6 +242,7 @@ def expanded_form(num):
     ]
 
     return " + ".join(terms)
+
 # 使用 str() 將數字轉換為字串以便逐位處理
 # 依序處理每一位數，忽略為 0 的位數
 # 使用 ' + ' 連接各項非零的部分
@@ -257,9 +260,10 @@ print(expanded_form(60308))  # 印出 10000 x 6 + 100 x 3 + 8
 
 ### 題目：找出一個數字陣列裡，出現奇數次數的數字
 
+### 範例：
 ```py
-範例：[1, 1, 0]，`0` 只有出現 1 次
-     [5, 5, 8, 8, 8, 4, 4]，`8` 出現了 3  次
+[1, 1, 0]，`0` 只有出現 1 次
+[5, 5, 8, 8, 8, 4, 4]，`8` 出現了 3  次
 ```
 
 ```py
@@ -269,6 +273,7 @@ def find_odd_elm(numbers):
     for number in numbers:
         result ^= number
     return result
+
 # 使用 XOR 運算符找出出現奇數次的數字
 
 print(find_odd_elm([1, 1, 2]))  # 印出 2
@@ -284,9 +289,10 @@ print(find_odd_elm([20, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]))  # 印出 5
 
 ### 題目：把數字加總，最終濃縮成個位數
 
+### 範例：
 ```py
-範例：9527 => 9 + 5 + 2 + 7 => 23 => 2 + 3 => 5
-     1450 => 1 + 4 + 5 + 0 => 10 => 1 + 0 => 1
+9527 => 9 + 5 + 2 + 7 => 23 => 2 + 3 => 5
+1450 => 1 + 4 + 5 + 0 => 10 => 1 + 0 => 1
 ```
 
 ```py
@@ -295,6 +301,7 @@ def number_reducer(num):
     while num >= 10:
         num = sum(int(digit) for digit in str(num))
     return num
+
 # 寫一個 while 迴圈重複相加直到只剩下一位數
 
 print(number_reducer(9527))  #  印出 5
@@ -329,6 +336,7 @@ def is_valid_vat_number(vat):
         return total_sum % 5 == 0 or alternative_sum % 5 == 0
     else:
         return total_sum % 5 == 0
+
 # 檢查是否為八位數字
 # 定義權重
 # 計算每位數字乘以權重後的結果
@@ -346,8 +354,9 @@ print(is_valid_vat_number("88117126")) # false
 
 ### 題目：把鄰近的重複值去除，但仍照原本的順序排序
 
+### 範例：
 ```py
-  範例："AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']
+"AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']
 ```
 
 ```py
@@ -361,6 +370,7 @@ def unique_order(sequence):
             prev = item
 
     return result
+
 # 使用 prev 變數來記錄上一個處理的值
 # 如果當前元素與前一個不同，则將其加入結果陣列中
 # 更新 prev 為當前元素
@@ -377,10 +387,11 @@ print(unique_order([1, 1, 1, 2, 2, 2, 1]))  # [1, 2, 1]
 
 ### 題目：把原本的字串拆解成 2 個字元一組，若不足 2 個字則補上底線
 
+### 範例：
+
 ```py
-範例：
-   "abcdef" -> ['ab', 'cd', 'ef']
-   "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
+"abcdef" -> ['ab', 'cd', 'ef']
+"abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 ```
 
 ```py
@@ -395,7 +406,6 @@ def split_string(str):
             result.append(str[i] + "_")
 
     return result
-
 
 # result 用於儲存分組後的結果
 # length 用於計算字串的長度
@@ -415,8 +425,10 @@ print(split_string(""))  # []
 
 ### 題目：把原本 snake_case 的字轉換成 camelCase 格式
 
+### 範例：
+
 ```py
-  範例："hello_world" -> "helloWorld"
+"hello_world" -> "helloWorld"
 ```
 
 ```py
@@ -425,7 +437,6 @@ def toCamelCase(str):
 
     camel_case = parts[0] + "".join(word.capitalize() for word in parts[1:])
     return camel_case
-
 
 # 以底線分割字串成列表
 # 將第一個部分保持小寫, 其他部分首字母大寫後合併
@@ -441,15 +452,16 @@ print(toCamelCase("get_good_score"))  # getGoodScore
 
 ### 題目：計算數字的 2 進位裡有幾個 1
 
+### 範例：
+
 ```py
-  範例：5 -> 101 -> 2 個 1
+5 -> 101 -> 2 個 1
 ```
 
 ```py
 def countBits(num):
 
     return bin(num).count("1")
-
 
 # 將數字轉換為二進位字串，並計算 '1' 的數量
 
@@ -477,7 +489,6 @@ def random_number(min, max):
         # 隨機生成範圍 [min, max-1] 的整數
     return random.randint(min, max - 1)
 
-
 # 只有一個參數時
 # 將 min 作為上限
 # 設定下限為 0
@@ -501,7 +512,6 @@ def xxoo(str):
     count_x = amount.count("x")
     count_o = amount.count("o")
     return count_x == count_o
-
 
 # 將字串轉為小寫，然後計算 'x' 和 'o' 的次數
 
@@ -540,7 +550,6 @@ class Stack:
         if self._elements:
             return self._elements.pop()
         return None
-
 
 # 使用列表來儲存堆疊的元素
 # 堆疊的大小是列表長度
@@ -588,7 +597,6 @@ class Queue:
             return self._elements.pop(0)
         return None
 
-
 # 使用列表來儲存隊列的元素
 # 隊列的大小是列表長度
 # 如果 item 不為 None, 則加入隊列
@@ -622,7 +630,6 @@ def calc_gcd(*numbers):
 
     return reduce(gcd, numbers)
 
-
 # 使用 reduce 將列表中的數字逐步計算 GCD
 
 print(calc_gcd(10))  # 10
@@ -637,9 +644,7 @@ print(calc_gcd(104, 96, 36, 88))  # 4
 
 ### 題目：算出 N 個數字的最小公倍數
 
-```py
-提示：可使用 023 計算最大公因數的函數
-```
+### 提示：可使用 023 計算最大公因數的函數
 
 ```py
 from math import gcd
@@ -652,7 +657,6 @@ def calc_lcm(*numbers):
         return a * b // gcd(a, b)
 
     return reduce(lcm, numbers)
-
 
 # 定義計算兩個數字的最小公倍數的函數
 # 使用 reduce 將列表中的數字逐步計算 LCM
@@ -668,12 +672,7 @@ print(calc_lcm(104, 96, 36, 88))  # 41184
 
 ### 題目：
 
-```py
-一般我們常見的四捨五入計算方式在統計上容易造成計算偏差
-於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差
-計算方式是「四捨六入五成雙」
-當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數
-```
+#### 一般我們常見的四捨五入計算方式在統計上容易造成計算偏差，於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差，計算方式是「四捨六入五成雙」，當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數。
 
 ```py
 def bankers_rounding(num, digits=0):
@@ -688,7 +687,6 @@ def bankers_rounding(num, digits=0):
             return (rounded - 0.1) if digits else int(rounded)
 
     return rounded
-
 
 # 設定捨入的精度
 # 四捨五入至指定的小數位
