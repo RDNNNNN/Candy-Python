@@ -15,8 +15,8 @@ def calc_gcd(*numbers):
 
 # 使用 reduce 將列表中的數字逐步計算 GCD
 
-print(calc_gcd(10))  # 10
-print(calc_gcd(103, 27))  # 1
-print(calc_gcd(21, 15, 18))  # 3
-print(calc_gcd(104, 96, 36, 88))  # 4
+print(calc_gcd(10)) # 10
+print(calc_gcd(103, 27)) # 1
+print(calc_gcd(21, 15, 18)) # 3
+print(calc_gcd(104, 96, 36, 88)) # 4
 ```
