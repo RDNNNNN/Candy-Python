@@ -188,7 +188,7 @@ def highest_score_word(input):
 
 # 建立函數來計算每個字的得分
 # 將輸入字串分割成單詞
-# 使用 max()找出得分最高的字
+# 使用 max() 找出得分最高的字
 
 print(highest_score_word("lorem ipsum dolor sit amet"))
 # 印出 ipsum
@@ -263,8 +263,8 @@ print(expanded_form(60308))  # 印出 10000 x 6 + 100 x 3 + 8
 ### 範例：
 
 ```py
-[1, 1, 0]，`0` 只有出現 1 次
-[5, 5, 8, 8, 8, 4, 4]，`8` 出現了 3  次
+[1, 1, 0]，0 只有出現 1 次
+[5, 5, 8, 8, 8, 4, 4]，8 出現了 3  次
 ```
 
 ```py
@@ -290,9 +290,9 @@ print(find_odd_elm([20, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]))  # 印出 5
 
 ### 題目：把數字加總，最終濃縮成個位數
 
-### 範例：
-
 ```py
+範例：
+
 9527 => 9 + 5 + 2 + 7 => 23 => 2 + 3 => 5
 1450 => 1 + 4 + 5 + 0 => 10 => 1 + 0 => 1
 ```
@@ -306,10 +306,10 @@ def number_reducer(num):
 
 # 寫一個 while 迴圈重複相加直到只剩下一位數
 
-print(number_reducer(9527))  #  印出 5
-print(number_reducer(1450))  #  印出 1
-print(number_reducer(5566108))  #  印出 4
-print(number_reducer(1234567890))  # / 印出 9
+print(number_reducer(9527))  # 印出 5
+print(number_reducer(1450))  # 印出 1
+print(number_reducer(5566108))  # 印出 4
+print(number_reducer(1234567890))  # 印出 9
 ```
 
 # 編號：CANDY-013
@@ -356,9 +356,9 @@ print(is_valid_vat_number("88117126")) # false
 
 ### 題目：把鄰近的重複值去除，但仍照原本的順序排序
 
-### 範例：
-
 ```py
+範例：
+
 "AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']
 ```
 
@@ -390,9 +390,9 @@ print(unique_order([1, 1, 1, 2, 2, 2, 1]))  # [1, 2, 1]
 
 ### 題目：把原本的字串拆解成 2 個字元一組，若不足 2 個字則補上底線
 
-### 範例：
-
 ```py
+範例：
+
 "abcdef" -> ['ab', 'cd', 'ef']
 "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 ```
@@ -428,9 +428,9 @@ print(split_string(""))  # []
 
 ### 題目：把原本 snake_case 的字轉換成 camelCase 格式
 
-### 範例：
-
 ```py
+範例：
+
 "hello_world" -> "helloWorld"
 ```
 
@@ -455,9 +455,9 @@ print(toCamelCase("get_good_score"))  # getGoodScore
 
 ### 題目：計算數字的 2 進位裡有幾個 1
 
-### 範例：
-
 ```py
+範例：
+
 5 -> 101 -> 2 個 1
 ```
 
@@ -499,7 +499,34 @@ def random_number(min, max):
 
 print(random_number(50))  # 隨機印出 0 ~ 49 之間的任何一個數字
 print(random_number(5, 30))  # 隨機印出 5 ~ 29 之間的任何一個數字
+```
 
+# 編號：CANDY-019
+
+### 程式語言：Python
+
+### 題目：檢查是否為某個數字的平方數
+
+```py
+def is_square(num):
+    import math
+
+    if num < 0:
+        return False
+    sqrt_num = int(math.sqrt(num))
+    return sqrt_num * sqrt_num == num
+
+
+# 匯入 math 模組, 判斷 num < 0 時為 False
+# 使用 math.sqrt() 得到數字的平方根, 並使用 int() 轉成整數
+# 判斷平方根相乘是否等於原來的數字並回傳
+
+print(is_square(0))  # True
+print(is_square(4))  # True
+print(is_square(5))  # False
+print(is_square(100))  # True
+print(is_square(-4))  # False
+print(is_square(-1))  # False
 ```
 
 # 編號：CANDY-020
@@ -602,8 +629,8 @@ class Queue:
 
 # 使用列表來儲存隊列的元素
 # 隊列的大小是列表長度
-# 如果 item 不為 None, 則加入隊列
-# 如果隊列不為空，取出第一個元素, 否則回傳 None
+# 如果 item 不為 None，則加入隊列
+# 如果隊列不為空，取出第一個元素，否則回傳 None
 
 queue = Queue()
 queue.enqueue(123)
@@ -647,7 +674,7 @@ print(calc_gcd(104, 96, 36, 88))  # 4
 
 ### 題目：算出 N 個數字的最小公倍數
 
-### 提示：可使用 023 計算最大公因數的函數
+提示：可使用 023 計算最大公因數的函數
 
 ```py
 from math import gcd
@@ -676,7 +703,8 @@ print(calc_lcm(104, 96, 36, 88))  # 41184
 
 ### 題目：
 
-#### 一般我們常見的四捨五入計算方式在統計上容易造成計算偏差，於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差，計算方式是「四捨六入五成雙」，當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數。
+一般我們常見的四捨五入計算方式在統計上容易造成計算偏差，於是有人推出了「銀行家捨入法」用來稍微平衡計算偏差，
+計算方式是「四捨六入五成雙」，當捨入計算位數剛好是 5 的時候，會算出離這個數字比較近的偶數。
 
 ```py
 def bankers_rounding(num, digits=0):
